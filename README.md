@@ -18,6 +18,7 @@ An AI-powered web app that helps you improve your email drafts using OpenAI's GP
 ### 1. Clone the repository
 
 git clone https://github.com/shant-arslanian/emailAI.git
+
 cd emailAI
 
 ### 2. Install dependencies
@@ -29,16 +30,21 @@ npm install
 ### 3. Set up your environment variables
 
 For the frontend (.env file in the root):
+
 REACT_APP_BASE_URL=http://localhost:5000
 
 For the backend (.env file in server/ or root, depending on your setup):
+
 OPENAI_API_KEY=your_openai_api_key_here
+
 You must use your own OpenAI API key to access the GPT model. You can get one from https://platform.openai.com.
 
 🧪 Running the app locally
+
 Start backend:
 
 node server/index.js
+
 Start frontend:
 
 npm start
