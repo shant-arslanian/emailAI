@@ -8,13 +8,16 @@ import {
   Paper,
   Box,
   Divider,
+  CircularProgress,
 } from "@mui/material";
 
 function App() {
   const [draft, setDraft] = useState("");
   const [improved, setImproved] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async () => {
+    setLoading(true);
     try {
       const response = await axios.post(
         `${process.env.REACT_APP_BASE_URL}/api/improve`,
@@ -25,6 +28,9 @@ function App() {
       setImproved(response.data.improvedEmail);
     } catch (error) {
       console.error("Error improving email:", error);
+      setImproved("⚠️ Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -54,9 +60,10 @@ function App() {
             variant="contained"
             color="primary"
             onClick={handleSubmit}
-            disabled={!draft.trim()}
+            disabled={!draft.trim() || loading}
+            startIcon={loading ? <CircularProgress size={20} /> : null}
           >
-            Improve Email
+            {loading ? "Improving..." : "Improve Email"}
           </Button>
         </Box>
 
