@@ -29,22 +29,22 @@ npm install
 
 ### 3. Set up your environment variables
 
-# For the frontend (.env file in the root):
+#### For the frontend (.env file in the root):
 
 REACT_APP_BASE_URL=http://localhost:5000
 
-# For the backend (.env file in server/ or root, depending on your setup):
+#### For the backend (.env file in server/ or root, depending on your setup):
 
 OPENAI_API_KEY=your_openai_api_key_here
 
-# You must use your own OpenAI API key to access the GPT model. You can get one from https://platform.openai.com.
+#### You must use your own OpenAI API key to access the GPT model. You can get one from https://platform.openai.com.
 
 ## 🧪 Running the app locally
 
-# Start backend:
+#### Start backend:
 
 node server/index.js
 
-# Start frontend:
+#### Start frontend:
 
 npm start
