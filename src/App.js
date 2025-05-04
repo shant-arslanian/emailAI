@@ -44,6 +44,10 @@ function App() {
         <Typography variant="subtitle1" gutterBottom>
           Paste your draft email below and let AI enhance it for you.
         </Typography>
+        <Typography variant="body2" color="textSecondary" sx={{ mb: 2 }}>
+          ⏳ Note: The first time you use this, it may take a little while to
+          respond.
+        </Typography>
 
         <TextField
           label="Your Draft Email"
