@@ -17,9 +17,7 @@ app.post("/api/improve", async (req, res) => {
       "https://api.openai.com/v1/chat/completions",
       {
         model: "gpt-4",
-        messages: [
-          { role: "user", content: `Improve this email: ${emailDraft}` },
-        ],
+        messages: [{ role: "user", content: `${emailDraft} make it better` }],
       },
       {
         headers: {
