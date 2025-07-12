@@ -29,8 +29,6 @@ app.post("/api/improve", async (req, res) => {
       }
     );
 
-    console.log("Corrected email:");
-
     res.json({ improvedEmail: response.data.choices[0].message.content });
   } catch (error) {
     console.error(error);
