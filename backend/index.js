@@ -17,7 +17,14 @@ app.post("/api/improve", async (req, res) => {
       "https://api.openai.com/v1/chat/completions",
       {
         model: "gpt-4",
-        messages: [{ role: "user", content: `${emailDraft} make it better` }],
+        messages: [
+          {
+            role: "system",
+            content:
+              "You are an email writing assistant. The user will give you a draft email they have written. Your job is to enhance and improve the writing of that same email — fix grammar, improve clarity, adjust tone to be professional yet natural, and make it more polished. Do NOT write a reply to the email. Do NOT add a subject line. Do NOT include any dashes or hyphens as bullet points or separators. Return ONLY the improved version of the user's original email, nothing else.",
+          },
+          { role: "user", content: emailDraft },
+        ],
       },
       {
         headers: {
